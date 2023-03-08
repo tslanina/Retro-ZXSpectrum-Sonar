@@ -14,7 +14,7 @@ COLOR_MISSILE  equ 2 + 64
         db 0,   %00010000   ; a period
         db 1,   %00000001   ; a period (coarse)
 .mixer:      
-        db 7,   %11111110   ; mixer 
+        db 7,   %00111110   ; mixer 
         db 8,   %00011111   ; amp a
         db 12,  %00111111   ; env period
         db 13,  0           ; env shape (one shot)
@@ -105,7 +105,7 @@ start:
         ld a,-15
         ld [.nextmod+1],a  ; end = no loop
 
-        ld a, %11110111 ; tune -> noise
+        ld a, %00110111 ; tune -> noise
         ld [.mixer+1],a 
 
 .notend :
